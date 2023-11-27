@@ -21,7 +21,7 @@
                 <div class="overflow-y-auto overflow-x-hidden flex-grow">
                     <ul class="flex flex-col py-4 space-y-1">
                         <li>
-                            <a href="#"
+                            <a href="/dashboard"
                                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                                 <span class="inline-flex justify-center items-center ml-4">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -40,7 +40,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="/inmail"
                                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                                 <span class="inline-flex justify-center items-center ml-4">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -55,7 +55,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="/outmail"
                                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                                 <span class="inline-flex justify-center items-center ml-4">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -74,7 +74,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="/issue"
                                 class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                                 <span class="inline-flex justify-center items-center ml-4">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -112,7 +112,7 @@
                     <ul class="absolute bottom-0 left-0">
                         <div class="flex flex-col py-4 space-y-1 left-0">
                             <li>
-                                <a href="#"
+                                <a href="/profile"
                                     class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-gray-50 text-gray-600 hover:text-gray-800 border-l-4 border-transparent hover:border-indigo-500 pr-6">
                                     <span class="inline-flex justify-center items-center ml-4">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
