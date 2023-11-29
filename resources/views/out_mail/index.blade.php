@@ -103,7 +103,7 @@
                     <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                         <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                             <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                            <span class="relative text-xs">completed</span>
+                            <span class="relative text-xs">selesai</span>
                         </span>
                     </td>
                 </tr>
@@ -127,7 +127,7 @@
                     <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                         <span class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                             <span aria-hidden class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                            <span class="relative text-xs">rejected</span>
+                            <span class="relative text-xs">ditolak</span>
                         </span>
                     </td>
                 </tr>
@@ -151,7 +151,7 @@
                     <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                         <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                             <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                            <span class="relative text-xs">completed</span>
+                            <span class="relative text-xs">selesai</span>
                         </span>
                     </td>
                 </tr>
@@ -175,7 +175,7 @@
                     <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                         <span class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
                             <span aria-hidden class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
-                            <span class="relative text-xs">in process</span>
+                            <span class="relative text-xs">dalam_proses</span>
                         </span>
                     </td>
 
@@ -200,7 +200,7 @@
                     <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
                         <span class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
                             <span aria-hidden class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
-                            <span class="relative text-xs">in process</span>
+                            <span class="relative text-xs">dalam_proses</span>
                         </span>
                     </td>
                 </tr>
