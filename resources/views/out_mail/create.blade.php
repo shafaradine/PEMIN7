@@ -70,18 +70,24 @@
                     <input id="endedAt" type="date"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
                 </div>
-                <div>
-                    <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Status</label>
-                    <input id="status" type="text"
-                        class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-                        placeholder="Completed">
+                <div class="form-group">
+                    <label class="text-sm text-gray dark:text-gray-200" for="category">Status</label>
+                        <select name="status" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+                            <option selected>Category Option</option>
+                            <option>selesai</option>
+                            <option>dalam_proses</option>
+                            <option>ditolak</option>
+                        </select>
                 </div>
-                <div>
-                    <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Type</label>
-                    <input id="type" type="text"
-                        class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-                        placeholder="In / Out">
+                <div class="form-group">
+                    <label class="text-sm text-gray dark:text-gray-200" for="category">Type</label>
+                        <select name="type" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+                            <option selected>Category Option</option>
+                            <option>masuk</option>
+                            <option>keluar</option>
+                        </select>
                 </div>
+            
                 <div class="">
                     <button
                         class=" mt-8 px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600">Save</button>
