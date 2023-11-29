@@ -1,11 +1,11 @@
 @extends('template')
-@section('title', 'Outcoming Mail')
+@section('title', 'Mail Status')
 @section('content')
 
 <main class="flex-1 ml-64">
     <div class="px-6">
         <div class="pt-3 pb-8">
-            <p class="w-5.5 h-3.5 text-zinc-800 text-2xl font-bold">OUTCOMING MAIL</p>
+            <p class="w-5.5 h-3.5 text-zinc-800 text-2xl font-bold">MAIL STATUS</p>
         </div>
         <div class="text-sm breadcrumbs">
             <ul>
@@ -16,7 +16,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
                         </svg>
-                        Outcoming Mail
+                        Mail Status
                     </span>
                 </li>
             </ul>
