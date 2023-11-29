@@ -1,11 +1,11 @@
 @extends('template')
-@section('title', 'Create New Out Mail')
+@section('title', 'New Mail')
 @section('content')
 
 <main class="flex-1 ml-64 w-">
     <div class="px-6">
         <div class="pt-3 pb-8">
-            <p class="w-5.5 h-3.5 text-zinc-800 text-2xl font-bold">CREATE NEW OUT MAIL</p>
+            <p class="w-5.5 h-3.5 text-zinc-800 text-2xl font-bold">ADD MAIL</p>
         </div>
         <div class="text-sm breadcrumbs">
             <ul>
@@ -37,38 +37,50 @@
         <form>
             <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                 <div>
-                    <label class="text-sm text-gray dark:text-gray-200" for="username">Nomor Surat</label>
-                    <input id="nomor" type="text"
+                    <label class="text-sm text-gray dark:text-gray-200" for="username">Address</label>
+                    <textarea id="address" type="text"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-                        placeholder="001/A/LEGAL/XI/2023">
+                        placeholder="JL. Nusa Bangsa"></textarea>
                 </div>
                 <div>
-                    <label class="text-sm text-gray dark:text-gray-200" for="username">Instansi</label>
-                    <input id="username" type="text"
+                    <label class="text-sm text-gray dark:text-gray-200" for="username">City</label>
+                    <input id="city" type="text"
+                        class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                        placeholder="Malang">
+                </div>
+                <div>
+                    <label class="text-sm text-gray dark:text-gray-200" for="username">Company Name</label>
+                    <input id="companyName" type="text"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
                         placeholder="PT. Tambang API">
                 </div>
                 <div>
-                    <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Tanggal Masuk</label>
-                    <input id="date" type="date"
-                        class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
-                </div>
-                <div>
-                    <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Tenggat Waktu</label>
-                    <input id="date" type="date"
-                        class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
-                </div>
-                <div>
-                    <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Perihal</label>
-                    <input id="hal" type="text"
+                    <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Detail</label>
+                    <input id="detail" type="text"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
                         placeholder="Kerjasama">
                 </div>
                 <div>
-                    <label class="text-sm text-gray dark:text-gray-200" for="username">Address</label>
-                    <textarea id="nomor" type="text"
+                    <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Tanggal Masuk</label>
+                    <input id="startedAt" type="date"
+                        class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+                </div>
+                <div>
+                    <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Tenggat Waktu</label>
+                    <input id="endedAt" type="date"
+                        class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
+                </div>
+                <div>
+                    <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Status</label>
+                    <input id="status" type="text"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-                        placeholder="JL. Nusa Bangsa"></textarea>
+                        placeholder="Completed">
+                </div>
+                <div>
+                    <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Type</label>
+                    <input id="type" type="text"
+                        class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
+                        placeholder="In / Out">
                 </div>
                 <div class="">
                     <button
