@@ -34,7 +34,7 @@
         </div>
     </div>
     <section class="px-6 mt-8">
-        <form>
+        <form >
             <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                 <div>
                     <label class="text-sm text-gray dark:text-gray-200" for="username">Address</label>
@@ -61,15 +61,17 @@
                         placeholder="Kerjasama">
                 </div>
                 <div>
-                    <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Tanggal Masuk</label>
-                    <input id="startedAt" type="text"
-                        class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="YYYY-DD-MM">
-                </div>
-                <div>
                     <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Tenggat Waktu</label>
                     <input id="endedAt" type="text"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="YYYY-DD-MM">
                 </div>
+
+                <div>
+                    <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Tanggal Masuk</label>
+                    <input id="startedAt" type="text"
+                        class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="YYYY-DD-MM">
+                </div>
+            
                 <div class="form-group">
                     <label class="text-sm text-gray dark:text-gray-200" for="category">Status</label>
                         <select name="status" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
@@ -80,7 +82,7 @@
                         </select>
                 </div>
                 <div class="form-group">
-                    <label class="text-sm text-gray dark:text-gray-200" for="category">Type</label>
+                    <label class="text-sm text-gray dark:text-gray-200" for="category">Mail Type</label>
                         <select name="type" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
                             <option selected>Category Option</option>
                             <option>masuk</option>
