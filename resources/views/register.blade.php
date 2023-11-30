@@ -109,6 +109,13 @@
                                     </label>
                                     <input id="phoneNumber" name="phone" type="tel" autocomplete="number" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="+628xxxxxxxxxx">
                                 </div>
+                                <div class="mt-2">
+                                    <label class="label">
+                                        <span class="label-text">Sex</span>
+                                    </label>
+                                    <label class="mr-12"><input type="radio" name="sex" value="male" /> Male</label>
+                                    <label><input type="radio" name="sex" value="female" /> Female</label>
+                                </div>
                             </div>
                             <div>
                                 <button type="submit" style="background-color:#040406" class="flex w-full justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white hover:bg-base-300 focus:outline-none focus:ring-2 focus:ring-base-200 focus:ring-offset-2">
