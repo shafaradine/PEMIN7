@@ -71,8 +71,7 @@
                         placeholder="JL. Nusa Bangsa"></textarea>
                 </div>
                 <div class="">
-                    <button
-                        class=" mt-8 px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600">Save</button>
+                    <a href="/outmail" class=" mt-8 px-6 py-2 leading-5 text-white transition-colors duration-200 transform bg-indigo-600 rounded-md hover:bg-pink-700 focus:outline-none focus:bg-gray-600">Save</a>
                 </div>
             </div>
         </form>
