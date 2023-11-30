@@ -35,10 +35,10 @@ class AuthController extends Controller
             $token = $apiResponse['data']['access_token'];
 
             // Redirect the user or perform actions with the token
-            return view('/mail/index')->with('token', $token);
+            return view('/mail/create')->with('token', $token);
         } else {
             // Handle the case when 'access_token' is missing or undefined
-            return redirect()->back()->with('error', 'Access token not found in the response.');
+            return redirect()->back()->with('error', 'Email / Password Wrong!');
         }
     }
     public function logout()

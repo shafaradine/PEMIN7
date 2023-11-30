@@ -71,6 +71,12 @@
                                     <input id="password" name="password" type="password" autocomplete="current-password" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="*********">
                                 </div>
                             </div>
+                            @if(session('error'))
+                                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                                    <strong class="font-bold">Error!</strong>
+                                    <span class="block sm:inline">{{ session('error') }}</span>
+                                </div>
+                            @endif
                             <div>
                                 <button type="submit" style="background-color:#040406" class="group relative flex w-full justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white hover:bg-base-300 focus:outline-none focus:ring-2 focus:ring-base-200 focus:ring-offset-2">
                                     <span class="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -81,6 +87,7 @@
                                     LOGIN
                                 </button>
                             </div>
+
                             <div class="flex text-sm justify-center mx-auto space-x-2">
                                 <p>Don't have account?</p>
                                 <a href="/register" style="color:#8aa38b">
