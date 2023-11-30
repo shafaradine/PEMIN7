@@ -35,11 +35,18 @@ class AuthController extends Controller
             $token = $apiResponse['data']['access_token'];
 
             // Redirect the user or perform actions with the token
-            return view('/out_mail/create')->with('token', $token);
+            return view('/mail/index')->with('token', $token);
         } else {
             // Handle the case when 'access_token' is missing or undefined
             return redirect()->back()->with('error', 'Access token not found in the response.');
         }
+    }
+    public function logout()
+    {
+        // Hapus token atau sesi pengguna
+        AuthController::logout();
 
+        // Redirect ke halaman login
+        return redirect('/login');
     }
 }

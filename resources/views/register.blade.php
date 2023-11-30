@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
+    <title>REGISTER</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.0.8/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -52,44 +52,81 @@
                     <div class="w-full max-w-md space-y-8">
                         <div>
                             <img class="mx-auto h-36 w-auto" src="/img/logo.png">
-                            <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 font-sans">Hi, Welcome!</h2>
+                            <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 font-sans">Create Your Account!</h2>
                         </div>
-                        <form class="mt-8 space-y-6" action="{{ route('login.submit') }}" method="POST">
-                        @csrf
+                        <form class="mt-8 space-y-8" action="#" method="POST">
                             <input type="hidden" name="remember" value="true">
-                            <div class="-space-y-px rounded-md shadow-sm">
-                                <div class="mb-2">
+                            <div class="-space-y-px rounded-md">
+                                <div class="mt-2">
+                                    <label class="label">
+                                        <span class="label-text">Name</span>
+                                    </label>
+                                    <input id="name" name="name" type="text" autocomplete="nama" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="your name">
+                                </div>
+                                <div class="mt-2">
                                     <label class="label">
                                         <span class="label-text">Email</span>
                                     </label>
-                                    <input id="email-address" name="email" type="email" autocomplete="email" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="example@gmail.com">
+                                    <input id="email" name="email" type="email" autocomplete="email" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="example@gmail.com">
                                 </div>
-                                <div>
+                                <div class="mt-2">
                                     <label class="label">
                                         <span class="label-text">Password</span>
                                     </label>
-                                    <input id="password" name="password" type="password" autocomplete="current-password" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="*********">
+                                    <input id="password" name="password" type="password" autocomplete="current-password" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="********">
+                                </div>
+                                <div class="mt-2">
+                                    <label class="label">
+                                        <span class="label-text">Division</span>
+                                    </label>
+                                    <div>
+                                        <select id="division" name="div" type="text" autocomplete="division" class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                                            <option value="Select">Select</option>
+                                            <option value="A">HRD</option>
+                                            <option value="B">Finance</option>
+                                            <option value="C">RnD</option>
+                                            <option value="D">Mining</option>
+                                            <option value="E">Marketing</option>
+                                            <option value="F">Legal</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mt-2">
+                                    <label class="label">
+                                        <span class="label-text">Address</span>
+                                    </label>
+                                    <input id="address" name="address" type="text" autocomplete="address" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="JL. Soekarno Hatta">
+                                </div>
+                                <div class="mt-2">
+                                    <label class="label">
+                                        <span class="label-text">Birthdate</span>
+                                    </label>
+                                    <input id="birthDate" name="birth" type="date" autocomplete="birthday" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="DD-MM-YYYY">
+                                </div>
+                                <div class="mt-2">
+                                    <label class="label">
+                                        <span class="label-text">Phone Number</span>
+                                    </label>
+                                    <input id="phoneNumber" name="phone" type="tel" autocomplete="number" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="+628xxxxxxxxxx">
                                 </div>
                             </div>
                             <div>
-                                <button type="submit" style="background-color:#040406" class="group relative flex w-full justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white hover:bg-base-300 focus:outline-none focus:ring-2 focus:ring-base-200 focus:ring-offset-2">
-                                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                                        <svg class="h-5 w-5 text-base-300 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
-                                        </svg>
-                                    </span>
-                                    LOGIN
+                                <button type="submit" style="background-color:#040406" class="flex w-full justify-center rounded-md border border-transparent py-2 px-4 text-sm font-medium text-white hover:bg-base-300 focus:outline-none focus:ring-2 focus:ring-base-200 focus:ring-offset-2">
+                                    REGISTER
                                 </button>
                             </div>
                             <div class="flex text-sm justify-center mx-auto space-x-2">
-                                <p>Don't have account?</p>
-                                <a href="/register" style="color:#8aa38b">
-                                    <p><b>Register Now</b></p>
+                                <p>Already have an account?</p>
+                                <a href="#" style="color:#8aa38b">
+                                    <p><b>Login</b></p>
                                 </a>
                             </div>
                         </form>
                     </div>
                 </div>
+                <p class="text-center mx-auto text-xs">Dengan masuk atau mendaftar, saya menyutujui <br>
+                    <b style="color:#81B29A">Syarat dan Ketentuan</b> serta <b style="color:#81B29A">Kebijakan Privasi</b>
+                </p>
             </div>
         </main>
     </div>

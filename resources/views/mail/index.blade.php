@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="ml-auto px-14 py-6">
-                <a href="/outmail/add" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <a href="/mail/add" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Create New Mail
                 </a>
             </div>

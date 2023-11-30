@@ -21,15 +21,18 @@ Route::get('/', function () {
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.submit');
 
+Route::get('/register', function () {
+    return view('register');
+});
 
 Route::get('/profile', function () {
     return view('profile');
 });
 
-Route::get('/outmail', function () {
-    return view('/out_mail/index');
+Route::get('/mail', function () {
+    return view('/mail/index');
 });
 
-Route::get('/outmail/add', function () {
-    return view('/out_mail/create');
+Route::get('/mail/add', function () {
+    return view('/mail/create');
 });
