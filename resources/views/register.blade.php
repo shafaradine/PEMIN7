@@ -117,7 +117,7 @@
                             </div>
                             <div class="flex text-sm justify-center mx-auto space-x-2">
                                 <p>Already have an account?</p>
-                                <a href="#" style="color:#8aa38b">
+                                <a href="/login" style="color:#8aa38b">
                                     <p><b>Login</b></p>
                                 </a>
                             </div>

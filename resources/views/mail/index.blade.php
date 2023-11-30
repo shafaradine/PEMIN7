@@ -1,11 +1,11 @@
 @extends('template')
-@section('title', 'Mail Status')
+@section('title', 'Dashboard')
 @section('content')
 
 <main class="flex-1 ml-64">
     <div class="px-6">
         <div class="pt-3 pb-8">
-            <p class="w-5.5 h-3.5 text-zinc-800 text-2xl font-bold">MAIL STATUS</p>
+            <p class="w-5.5 h-3.5 text-zinc-800 text-2xl font-bold">DASHBOARD</p>
         </div>
         <div class="text-sm breadcrumbs">
             <ul>
