@@ -29,7 +29,7 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-Route::get('/mail', function () {
+Route::get('/dashboard', function () {
     return view('/mail/index');
 });
 
