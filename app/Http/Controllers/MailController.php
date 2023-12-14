@@ -116,7 +116,10 @@ class MailController extends Controller
             return redirect()->route('login');
         }
         
-        return redirect()->route('mail.incoming');
+        if ($request->type == 'masuk') {
+            return redirect()->route('mails.incoming');
+        }
+        return redirect()->route('mails.outgoing');
     }
 
     /**
