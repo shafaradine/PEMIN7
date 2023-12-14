@@ -54,7 +54,8 @@
                             <img class="mx-auto h-36 w-auto" src="/img/logo.png">
                             <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900 font-sans">Create Your Account!</h2>
                         </div>
-                        <form class="mt-8 space-y-8" action="#" method="POST">
+                        <form class="mt-8 space-y-8" action="{{ route('register.submit') }}" method="POST">
+                            @csrf
                             <input type="hidden" name="remember" value="true">
                             <div class="-space-y-px rounded-md">
                                 <div class="mt-2">
@@ -80,14 +81,15 @@
                                         <span class="label-text">Division</span>
                                     </label>
                                     <div>
-                                        <select id="division" name="div" type="text" autocomplete="division" class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
-                                            <option value="Select">Select</option>
-                                            <option value="A">HRD</option>
-                                            <option value="B">Finance</option>
-                                            <option value="C">RnD</option>
-                                            <option value="D">Mining</option>
-                                            <option value="E">Marketing</option>
-                                            <option value="F">Legal</option>
+                                        <select id="division" name="division" type="text" autocomplete="division" class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                                            <option value="Select" selected>Choose your division</option>
+                                            <option value="hrd">HRD</option>
+                                            <option value="finance">Finance</option>
+                                            <option value="rnd">RnD</option>
+                                            <option value="mining">Mining</option>
+                                            {{-- <option value="marketing">Marketing</option> --}}
+                                            <option value="legal">Legal</option>
+                                            <option value="it">Information Technology</option>
                                         </select>
                                     </div>
                                 </div>
@@ -101,20 +103,20 @@
                                     <label class="label">
                                         <span class="label-text">Birthdate</span>
                                     </label>
-                                    <input id="birthDate" name="birth" type="date" autocomplete="birthday" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="DD-MM-YYYY">
+                                    <input id="birthDate" name="birthDate" type="date" autocomplete="birthday" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="DD-MM-YYYY">
                                 </div>
                                 <div class="mt-2">
                                     <label class="label">
                                         <span class="label-text">Phone Number</span>
                                     </label>
-                                    <input id="phoneNumber" name="phone" type="tel" autocomplete="number" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="+628xxxxxxxxxx">
+                                    <input id="phoneNumber" name="phoneNumber" type="tel" autocomplete="number" required class="relative block w-full appearance-none rounded-lg border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" placeholder="+628xxxxxxxxxx">
                                 </div>
                                 <div class="mt-2">
                                     <label class="label">
                                         <span class="label-text">Sex</span>
                                     </label>
-                                    <label class="mr-12"><input type="radio" name="sex" value="male" /> Male</label>
-                                    <label><input type="radio" name="sex" value="female" /> Female</label>
+                                    <label class="mr-12"><input type="radio" name="sex" value="M" /> Male</label>
+                                    <label><input type="radio" name="sex" value="F"/> Female</label>
                                 </div>
                             </div>
                             <div>

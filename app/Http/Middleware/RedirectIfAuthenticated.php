@@ -6,6 +6,7 @@ use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpFoundation\Response;
 
 class RedirectIfAuthenticated
@@ -15,10 +16,18 @@ class RedirectIfAuthenticated
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle(Request $request, Closure $next, $guard = null)
     {
-        if (Auth::check()) {
-            return redirect('/dashboard');
+        // if (Auth::check()) {
+        //     return redirect('/dashboard');
+        // }
+
+        // return $next($request);
+
+        $token = Session::get('bearer');
+
+        if (!isset($token)) {
+            return redirect()->route('login');
         }
 
         return $next($request);

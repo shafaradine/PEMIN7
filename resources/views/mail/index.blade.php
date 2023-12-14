@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="ml-auto px-14 py-6">
-                <a href="/mail/add" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                <a href="{{ route('mails.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Create New Mail
                 </a>
             </div>
@@ -58,141 +58,68 @@
                     <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-grey tracking-wider">
                         PERIHAL</th>
                     <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-grey tracking-wider">
-                        TANGGAL MASUK</th>
-                    <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-grey tracking-wider">
-                        TENGGAT WAKTU</th>
+                        ADDRESS</th>
                     <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-grey tracking-wider">
                         STATUS</th>
-                    <th class="px-6 py-3 border-b-2 border-gray-300"></th>
+                    <th class="px-6 py-3 border-b-2 border-gray-300 text-left text-sm leading-4 text-grey tracking-wider"></th>
                 </tr>
             </thead>
             <tbody class="bg-white">
-                <tr>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div class="flex items-center">
-                            <div>
-                                <div class="text-sm leading-5 text-gray-800">#1</div>
+                @php
+                    $number = 1;
+                @endphp
+                @foreach ($mails as $mail)
+                    <tr>
+                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                            <div class="flex items-center">
+                                <div>
+                                    <div class="text-sm leading-5 text-gray-800">#{{ $number++ }}</div>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div class="text-sm leading-5 text-blue-900">PT Bahagia Selalu</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        Pembaruan Lisensi P</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">3
-                        Oktober 2023</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">3
-                        November 2023</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                            <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                            <span class="relative text-xs">selesai</span>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div class="flex items-center">
-                            <div>
-                                <div class="text-sm leading-5 text-gray-800">#2</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
+                            <div class="text-sm leading-5 text-blue-900">{{ $mail['companyName'] }}</div>
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                            {{ $mail['detail'] }}</td>
+                        <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">
+                            {{ $mail['address'] }}
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                            <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                                @if ($mail['status'] == 'selesai')
+                                    <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
+                                    <span class="relative text-xs">Selesai</span>
+                                @elseif ($mail['status'] == 'dalam_proses')
+                                    <span aria-hidden class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
+                                    <span class="relative text-xs">Dalam Proses</span>
+                                @else
+                                    <span aria-hidden class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
+                                    <span class="relative text-xs">Ditolak</span>
+                                @endif
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
+                            <div class="flex">
+                                <span>
+                                    <u class="me-2 px-2 py-2 leading-5 text-white transition-colors duration-200 transform bg-indigo-600 rounded-md focus:outline-none focus:bg-gray-600">
+                                        <button type="submit">
+                                            <a href="{{ route('mails.edit', $mail['idLetter']) }}">
+                                                Edit
+                                            </a>
+                                        </button>
+                                    </u>
+                                </span>
+                                
                             </div>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div class="text-sm leading-5 text-blue-900">PT Sehat Sentosa</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        Kerjasama Produk A</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">10
-                        Oktober 2023</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">10
-                        November 2023</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        <span class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
-                            <span aria-hidden class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                            <span class="relative text-xs">ditolak</span>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div class="flex items-center">
-                            <div>
-                                <div class="text-sm leading-5 text-gray-800">#3</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div class="text-sm leading-5 text-blue-900">PT Gemerlap Buana</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        Investasi Gedung B </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">15
-                        Oktober 2023</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">15
-                        November 2023</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                            <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                            <span class="relative text-xs">selesai</span>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div class="flex items-center">
-                            <div>
-                                <div class="text-sm leading-5 text-gray-800">#4</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div class="text-sm leading-5 text-blue-900">PT Mawar Peduli</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        Lisensi Produk F</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">27
-                        Oktober 2023</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">27
-                        November 2023</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        <span class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
-                            <span aria-hidden class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
-                            <span class="relative text-xs">dalam_proses</span>
-                        </span>
-                    </td>
-
-                </tr>
-                <tr>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div class="flex items-center">
-                            <div>
-                                <div class="text-sm leading-5 text-gray-800">#5</div>
-                            </div>
-                        </div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500">
-                        <div class="text-sm leading-5 text-blue-900">PT Cakra Buana</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        Regulasi Produk C</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">31
-                        Oktober 2023</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-500 text-blue-900 text-sm leading-5">30
-                        November 2023</td>
-                    <td class="px-6 py-4 whitespace-no-wrap border-b text-blue-900 border-gray-500 text-sm leading-5">
-                        <span class="relative inline-block px-3 py-1 font-semibold text-orange-900 leading-tight">
-                            <span aria-hidden class="absolute inset-0 bg-orange-200 opacity-50 rounded-full"></span>
-                            <span class="relative text-xs">dalam_proses</span>
-                        </span>
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
         <div class="sm:flex-1 sm:flex sm:items-center sm:justify-between mt-4 work-sans">
             <div>
-                <p class="text-sm leading-5 text-blue-700">
+                {{-- <p class="text-sm leading-5 text-blue-700">
                     Showing
                     <span class="font-medium">1</span>
                     to
@@ -200,19 +127,19 @@
                     of
                     <span class="font-medium">250</span>
                     results
-                </p>
+                </p> --}}
             </div>
             <div>
                 <nav class="relative z-0 inline-flex shadow-sm">
                     <div>
-                        <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150" aria-label="Previous" v-on:click.prevent="changePage(pagination.current_page - 1)">
+                        {{-- <a href="#" class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150" aria-label="Previous" v-on:click.prevent="changePage(pagination.current_page - 1)">
                             <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                             </svg>
-                        </a>
+                        </a> --}}
                     </div>
                     <div>
-                        <a href="#" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-blue-700 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-tertiary active:text-gray-700 transition ease-in-out duration-150 hover:bg-tertiary">
+                        {{-- <a href="#" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-blue-700 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-tertiary active:text-gray-700 transition ease-in-out duration-150 hover:bg-tertiary">
                             1
                         </a>
                         <a href="#" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-blue-600 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-tertiary active:text-gray-700 transition ease-in-out duration-150 hover:bg-tertiary">
@@ -220,14 +147,14 @@
                         </a>
                         <a href="#" class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm leading-5 font-medium text-blue-600 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-tertiary active:text-gray-700 transition ease-in-out duration-150 hover:bg-tertiary">
                             3
-                        </a>
+                        </a> --}}
                     </div>
                     <div v-if="pagination.current_page < pagination.last_page">
-                        <a href="#" class="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150" aria-label="Next">
+                        {{-- <a href="#" class="-ml-px relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm leading-5 font-medium text-gray-500 hover:text-gray-400 focus:z-10 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-100 active:text-gray-500 transition ease-in-out duration-150" aria-label="Next">
                             <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
                             </svg>
-                        </a>
+                        </a> --}}
                     </div>
                 </nav>
             </div>

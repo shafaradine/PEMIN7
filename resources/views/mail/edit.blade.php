@@ -34,61 +34,72 @@
         </div>
     </div>
     <section class="px-6 mt-8">
-        <form action="{{ route('mails.store') }}" method="post">
+        <form action="{{ route('mails.update', $mail['idLetter']) }}" method="post">
             @csrf
+            @method('put')
             <div class="grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2">
                 <div>
                     <label class="text-sm text-gray dark:text-gray-200" for="username">Address</label>
                     <input required name="address" id="address" type="text"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-                        placeholder="JL. Nusa Bangsa"></input>
+                        placeholder="JL. Nusa Bangsa" value="{{ $mail['address'] }}"></input>
                 </div>
                 <div>
                     <label class="text-sm text-gray dark:text-gray-200" for="username">City</label>
                     <input required name="city" id="city" type="text"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-                        placeholder="Malang">
+                        placeholder="Malang" value="{{ $mail['city'] }}">
                 </div>
                 <div>
                     <label class="text-sm text-gray dark:text-gray-200" for="username">Company Name</label>
                     <input required name="companyName" id="companyName" type="text"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-                        placeholder="PT. Tambang API">
+                        placeholder="PT. Tambang API" value="{{ $mail['companyName'] }}">
                 </div>
                 <div>
                     <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Detail</label>
                     <input required name="detail" id="detail" type="text"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring"
-                        placeholder="Kerjasama">
+                        placeholder="Kerjasama" value="{{ $mail['detail'] }}">
                 </div>
 
                 <div>
                     <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Tanggal Masuk</label>
-                    <input required name="startedAt" id="startedAt" type="date"
+                    <input value="{{ $mail['startedAt'] }}" required name="startedAt" id="startedAt" type="date"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="YYYY-DD-MM">
                 </div>
 
                 <div>
                     <label class="text-sm text-gray dark:text-gray-200" for="passwordConfirmation">Tenggat Waktu</label>
-                    <input required name="endedAt" id="endedAt" type="date"
+                    <input value="{{ $mail['endedAt'] }}" required name="endedAt" id="endedAt" type="date"
                         class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring" placeholder="YYYY-DD-MM">
                 </div>
             
                 <div class="form-group">
                     <label class="text-sm text-gray dark:text-gray-200" for="category">Status</label>
                         <select required name="status" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
-                            <option selected>Status Option</option>
-                            <option value="selesai">Selesai</option>
-                            <option value="dalam_proses">Dalam Proses</option>
-                            <option value="ditolak">Ditolak</option>
+                            @php
+                                $status = [['selesai', 'Selesai'], ['dalam_proses', 'Dalam Proses'], ['ditolak', 'Ditolak']];
+                                $index = 0;
+                            @endphp
+                            @for ($i = 0; $i < count($status); $i++)
+                                @if ($mail['status'] == $status[$i][0] )
+                                    @php
+                                        $index = $i;
+                                    @endphp
+                                @else
+                                    <option value="{{ $status[$i][0] }}">{{ $status[$i][1] }}</option>
+                                @endif
+                            @endfor
+                            <option value="{{ $mail['status'] }}" selected>{{ $status[$index][1] }}</option>
+                            {{-- <option value="ditolak">Ditolak</option> --}}
                         </select>
                 </div>
                 <div class="form-group">
                     <label class="text-sm text-gray dark:text-gray-200" for="category">Mail Type</label>
                         <select required name="type" class="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-300 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-500 dark:focus:border-blue-500 focus:outline-none focus:ring">
-                            <option selected>Category Option</option>
-                            <option value="masuk">Masuk</option>
-                            <option value="keluar">Keluar</option>
+                            <option value="{{ $mail['type'] }}" selected>{{ $mail['type'] == 'masuk'? 'Masuk':'Keluar' }}</option>
+                            <option value="{{ $mail['type'] != 'masuk'? 'masuk':'keluar' }}">{{ $mail['type'] != 'masuk'? 'Masuk':'Keluar' }}</option>
                         </select>
                 </div>
             
