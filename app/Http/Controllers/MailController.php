@@ -122,17 +122,4 @@ class MailController extends Controller
         return redirect()->route('mails.outgoing');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    // public function destroy(string $id)
-    // {
-    //     $response = Http::withoutVerifying()->withToken(Session::get('bearer'))->delete("https://pemin.aenzt.tech/api/v1/legal/letter/$id");
-        
-    //     if ($response->getStatusCode() == 401) {
-    //         return redirect()->route('login');
-    //     }
-
-    //     return redirect()->route('mails.index');
-    // }
 }

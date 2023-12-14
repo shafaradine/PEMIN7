@@ -18,12 +18,6 @@ class RedirectIfAuthenticated
      */
     public function handle(Request $request, Closure $next, $guard = null)
     {
-        // if (Auth::check()) {
-        //     return redirect('/dashboard');
-        // }
-
-        // return $next($request);
-
         $token = Session::get('bearer');
 
         if (!isset($token)) {
