@@ -36,13 +36,13 @@ class AuthController extends Controller
     
     public function login(Request $request)
     {
-        // Validate form data
+        
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
-        // Prepare data for the API request
+        
         $requestData = [
             'email' => $request->input('email'),
             'password' => $request->input('password'),
